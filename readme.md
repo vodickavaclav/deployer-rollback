@@ -1,12 +1,10 @@
 Usage
 ---
-Copy the code and add it to your deploy.php.
-
-You can use it in Gitlab CI:
+Copy the code and add it to your deploy.php and use this command:
 
 > vendor/bin/dep rollback $CI_ENVIRONMENT_SLUG  --revision="$CI_COMMIT_SHA" -v
 
-You can also configure it as manual job in Gitlab:
+You can also configure it as manual job for Gitlab in .gitlab-ci.yml:
 
 ```config 
 rollback_here_prod:
@@ -18,4 +16,6 @@ rollback_here_prod:
     name: production
     url: https://example.com/
   when: manual
+  script:
+    - vendor/bin/dep rollback $CI_ENVIRONMENT_SLUG  --revision="$CI_COMMIT_SHA" -v
 ``` 
