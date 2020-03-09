@@ -1,6 +1,6 @@
 Usage
 ---
-Copy the code and add it to your deploy.php and use this command:
+Require the rollback.php file in your deploy.php and use this command:
 
 > vendor/bin/dep rollback $CI_ENVIRONMENT_SLUG  --revision="$CI_COMMIT_SHA" -v
 
